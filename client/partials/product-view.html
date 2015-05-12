@@ -1,0 +1,55 @@
+<!-- Created by ErolTokalac on 05/12/15.
+-->
+<div>
+    <a class="btn btn-primary" ui-sref="editProduct({id:product._id})">Edit</a>
+</div>
+<table class="table producttable">
+    <tr>
+        <td><h3>Details for {{product.name}}</h3></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Product Name</td>
+        <td>{{product.name}}</td>
+    </tr>
+    <tr>
+        <td>Product Description</td>
+        <td>{{product.description}}</td>
+    </tr>
+    <tr>
+        <td>Product Price</td>
+        <td>{{product.price}}</td>
+    </tr>
+    <tr>
+        <td>Product Stock</td>
+        <td>{{product.stock}}</td>
+    </tr>
+    <tr>
+        <td>Product Create Date</td>
+        <td>{{product.created_at}}</td>
+    </tr>
+    <tr>
+        <td>Product Update Date</td>
+        <td>{{product.updated_at}}</td>
+    </tr>
+</table>
+<table class="table commenttable">
+	<tr>
+        <td><h3>Add Comment</h3></td>
+        <td></td>
+    </tr>
+</table>
+<form class="form-horizontal" role="form" ng-submit="addComment()">
+    <div ng-include="'partials/_comment_form.html'"></div>
+</form>
+
+<table class="table commenttable">
+    <tr>
+        <td><h3>All Comments ({{product.comment_count}})</h3></td>
+        <td></td>
+    </tr>
+   <tr ng-repeat="item in items">
+		<td><h3>{{item.name}}</h3><span>{{item.text}}</span></td>
+		<td>{{item.created_at}}</td>
+   </tr>     
+</table>
